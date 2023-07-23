@@ -197,7 +197,6 @@ class RegistrationForm:
         x_mean_bytes = x_mean.tobytes()
         
         # step-4: save this into redis database
-        # redis hashes
         r.hset(name='academy:register',key=key,value=x_mean_bytes)
         
         # 

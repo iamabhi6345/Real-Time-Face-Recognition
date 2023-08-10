@@ -19,10 +19,10 @@ import os
 # Connect to Redis Client
 # connect redis to database
 r = redis.Redis(
-    host="redis-15902.c273.us-east-1-2.ec2.cloud.redislabs.com",
-    port=15902,
-    username="default", # use your Redis user. More info https://redis.io/docs/management/security/acl/
-    password="zIrkbRm6ubaX7aLsG1BYLIfkCFbz9eu7", # use your Redis password
+    host="************************************",
+    port=******,
+    username="*******", # use your Redis user.
+    password="*****************", # use your Redis password
    
 )
 # Retrive Data from databas e

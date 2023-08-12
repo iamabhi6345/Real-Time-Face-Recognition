@@ -3,14 +3,12 @@ from Home import face_rec
 st.subheader('Reporting')
 
 
-# Retrive logs data and show in Report.py
-# extract data from redis list
+
 name = 'attendance:logs'
 def load_logs(name,end=-1):
     logs_list = face_rec.r.lrange(name,start=0,end=end) # extract all data from the redis database
     return logs_list
 
-# tabs to show the info
 tab1, tab2 = st.tabs(['Registered Data','Logs'])
 
 with tab1:

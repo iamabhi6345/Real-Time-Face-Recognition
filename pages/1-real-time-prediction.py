@@ -20,14 +20,11 @@ waitTime = 30 # time in sec
 setTime = time.time()
 realtimepred = face_rec.RealTimePred() # real time prediction class
 
-# Real Time Prediction
-# streamlit webrtc
-# callback function
+
 def video_frame_callback(frame):
     global setTime
     
-    img = frame.to_ndarray(format="bgr24") # 3 dimension numpy array
-    # operation that you can perform on the array
+    img = frame.to_ndarray(format="bgr24") 
     pred_img = realtimepred.face_prediction(img,redis_face_db,
                                         'facial_features',['Name','Role'],thresh=0.5)
     

@@ -9,22 +9,20 @@ import av
 st.set_page_config(page_title='Registration Form')
 st.subheader('Registration Form')
 
-## init registration form
+
 registration_form = face_rec.RegistrationForm()
 
-# Step-1: Collect person name and role
-# form
+
 person_name = st.text_input(label='Name',placeholder='First & Last Name')
 role = st.selectbox(label='Select your Role',options=('Student',
                                                       'Teacher'))
 
 
-# step-2: Collect facial embedding of that person
+
 def video_callback_func(frame):
     img = frame.to_ndarray(format='bgr24') # 3d array bgr
     reg_img, embedding = registration_form.get_embedding(img)
-    # two step process
-    # 1st step save data into local computer txt
+
     if embedding is not None:
         with open('face_embedding.txt',mode='ab') as f:
             np.savetxt(f,embedding)
@@ -34,7 +32,7 @@ def video_callback_func(frame):
 webrtc_streamer(key='registration',video_frame_callback=video_callback_func)
 
 
-# step-3: save the data in redis database
+e
 
 
 if st.button('Submit'):
